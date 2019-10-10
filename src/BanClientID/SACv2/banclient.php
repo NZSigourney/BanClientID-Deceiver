@@ -7,7 +7,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\{Player, Server};
 use pocketmine\utils\Config;
-use pocketmine\event\player\PlayerLoginEvent;
+use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\server\DataPacketReceiveEvent;
 
 class banclient extends PluginBase implements Listener
@@ -48,7 +48,7 @@ class banclient extends PluginBase implements Listener
         }
     }
 
-    public function onLogin(PlayerLoginEvent $ev)
+    public function onJoin(PlayerJoinEvent $ev)
     {
         $player = $ev->getPlayer();
         if ($player->isClosed()) {

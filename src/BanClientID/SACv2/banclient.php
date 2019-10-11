@@ -16,6 +16,7 @@ class banclient extends PluginBase implements Listener
 
     public function onEnable()
     {
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->alert("Enable Plugin! Do not stop anything!");
         $this->client = new Config($this->getDataFolder() . "ClientID.yml", Config::YAML, [
             "ClientID Banned" => 0,
@@ -34,10 +35,11 @@ class banclient extends PluginBase implements Listener
 §b | |_) | (_| | | | | |____| | |  __/ | | | |_ _| |_| |__| |
 §6 |____/ \__,_|_| |_|\_____|_|_|\___|_| |_|\__|_____|_____/ 
                                                            
-                       §aCode By BlackPMFury");
+                       §aCode By BlackPMFury
+     ## This plugin may not work for MCPE 1.1 and older");
     }
 
-    public function onDeceive(DataPacketReceiveEvent $ev)
+    public function onReceive(DataPacketReceiveEvent $ev)
     {
         $bc = $ev->getPacket();
         if ($bc instanceof LoginPacket) {

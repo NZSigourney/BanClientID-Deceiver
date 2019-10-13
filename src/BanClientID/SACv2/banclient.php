@@ -37,7 +37,7 @@ class banclient extends PluginBase implements Listener
                        §aCode By BlackPMFury");
     }
 
-    public function onDeceive(DataPacketReceiveEvent $ev)
+    public function onDeceive(DataPacketReceiveEvent $ev): void
     {
         $bc = $ev->getPacket();
         if ($bc instanceof LoginPacket) {

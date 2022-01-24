@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/NZSigourney/BanClientID-Deceiver
+build-by-default: true
+branches:
+- master
+projects:
+  BanClientID-Deceiver:
+    path: ""
+...
